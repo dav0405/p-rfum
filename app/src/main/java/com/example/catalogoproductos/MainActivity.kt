@@ -20,5 +20,17 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         
         binding.navigationRail.setupWithNavController(navController)
+        
+        binding.navigationRail.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.inicioFragment -> navController.navigate(R.id.inicioFragment)
+                R.id.catalogoFragment -> navController.navigate(R.id.catalogoFragment)
+                R.id.favoritosFragment -> navController.navigate(R.id.favoritosFragment)
+                R.id.carritoFragment -> navController.navigate(R.id.carritoFragment)
+                R.id.perfilFragment -> navController.navigate(R.id.perfilFragment)
+                R.id.webFragment -> navController.navigate(R.id.webFragment)
+            }
+            true
+        }
     }
 }
